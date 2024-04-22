@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "project-api"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+sqlalchemy = "^2.0.28"
+geoalchemy2 = "^0.14.6"
+psycopg2 = "^2.9.9"
+uvicorn = {extras = ["standard"], version = "^0.28.0"}
+alembic = "^1.13.1"
+pydantic = "^2.6.4"
+python-dotenv = "^1.0.1"
+asyncpg = "^0.29.0"
+geojson-pydantic = "^1.0.2"
+shapely = "^2.0.3"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+ruff = "^0.3.2"
+
+[tool.ruff]
+line-length = 119
+
+[tool.mypy]
+plugins = "sqlalchemy.ext.mypy.plugin"
+ignore_missing_imports = true
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
